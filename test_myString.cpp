@@ -21,19 +21,24 @@ int main()
 {
 	myString temp;
 	cin >> temp;
-	cout << temp << " "  << temp.length()<< endl;
+	char ch = temp[2];
+	ch = 'r';
+	cout << temp;
+
+
+	/*cout << temp << " "  << temp.length()<< endl;
 	cout << temp.size() << endl;
 	int len = temp.length();
 	cout << len << endl;
-	len = 5;
+	len = 5;*/
 	//string b;
 	//cout << strlen(b) << endl;
-	myString a(5,'a');
+/*	myString a(5,'a');
 	myString b(a);
 	cout << a << endl;
 	printf("%s\n",a.str());
 	//myString s("asdasds");
 	printf("%s\n",b.str());
-
+*/
 	return 0;
 }

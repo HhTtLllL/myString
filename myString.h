@@ -38,9 +38,9 @@ class myString
 			//len = length;
 			return size;
 		}
-		char& operator[] (int index);
-		myString& operator= (myString& str);
-		
+		char& operator[] (int index) const ;
+		myString& operator= (const myString& str);
+		int swap(myString& s1,myString& s2);
 
 
 

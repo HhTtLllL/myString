@@ -24,8 +24,9 @@ myString::myString(const char *str)
 	}
 }
 			      //加 const 会报错
-myString& myString::operator=(myString& str)
+myString& myString::operator=(const myString& str)
 {
+	//如果原来有值就删除
 	if(my_str != NULL) 
 	{
 		delete[] my_str;
@@ -40,7 +41,11 @@ myString& myString::operator=(myString& str)
 	}
 	return *this;
 }
-char& myString::operator[](int index)
+int myString::swap(myString& s1,myString& s2)
+{
+
+}
+char& myString::operator[](int index) const 
 {
 	return my_str[index];
 }
