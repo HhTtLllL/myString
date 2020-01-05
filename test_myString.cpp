@@ -20,12 +20,17 @@ void test(myString &str)
 }
 int main()
 {
-	
+
 	myString temp,temp1;
+	/*if(temp.empty()) cout << "空" << endl;
+	else cout << "非空" << endl;*/
+
 	cin >> temp >> temp1;
 	cout << temp << endl << temp1 << endl;
-	if(temp > temp1) cout << "大于\n";
-	else cout << "不大于\n";
+	temp.append('c');
+	cout << temp << endl;
+/*	if(temp > temp1) cout << "大于\n";
+	else cout << "不大于\n";*/
 	//temp.swap(temp1);
 	//cout << "temp = " << temp << endl << "temp1 = "<< temp1 << endl;
 

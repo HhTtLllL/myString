@@ -18,6 +18,9 @@ int main()
 	cin >> temp >> temp1;
 	cout << temp <<  endl;
 	cout << temp1 <<  endl;
+	temp.push_back('a');
+	cout << temp << endl;
+
 /*	cout << " temp size = " << temp.size() << endl;
 	cout << " temp length = " << temp.length() << endl;
 */

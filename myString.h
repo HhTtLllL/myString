@@ -22,7 +22,7 @@ class myString
 		}
 		myString(size_t len,char ch)
 		{
-			my_str = new char[len];
+			my_str = new char[len + 1];
 			for(int i = 0;i < len;i++) my_str[i] = ch;
 		}
 
@@ -56,6 +56,16 @@ class myString
 			s2 = *this;
 			*this = temp;*/
 			return ;
+		}
+		bool empty()
+		{
+			if(my_str == NULL) return true;
+			else return false;
+		}
+		void push_back(char ch);
+		void append(char ch)
+		{
+			push_back(ch);
 		}
 		bool operator== (myString& s1);
 		bool operator!= (myString& s1);

@@ -15,7 +15,7 @@ myString::myString(const char *str)
 	const char *temp = str;
 	int len = 0;
 	while(str[len]) len++;
-	my_str = new char[len];
+	my_str = new char[len + 1];
 	len = 0;
 	while(str[len]) 
 	{
@@ -88,6 +88,21 @@ bool myString::operator< (myString& s1)
 bool myString::operator> (myString& s1)
 {
 	return (s1 < (*this));
+}
+
+void myString::push_back(char ch)
+{
+	int len1 = (*this).length();
+	char *temp = my_str;
+	my_str = new char[len1 + 2];
+	for(int i = 0;i < len1;i++)
+	{
+		*(my_str + i) = *(temp + i);
+	}
+	*(my_str + len1) = ch;
+	*(my_str + len1 + 1) = '\0';
+	
+	return ;
 }
 ostream& operator<< (ostream& os,myString &str)
 {
