@@ -14,26 +14,25 @@
 
 using namespace std;
 
-void test(myString &str)
-{
-	
-}
 int main()
 {
 
-	myString temp,temp1;
+	myString temp,temp1,temp2;
 	/*if(temp.empty()) cout << "空" << endl;
 	else cout << "非空" << endl;*/
-
+	//cout << "size = " << temp.length();
 	cin >> temp >> temp1;
 	cout << temp << endl << temp1 << endl;
-	temp.append('c');
-	cout << temp << endl;
-/*	if(temp > temp1) cout << "大于\n";
+	//cout << temp + temp1 << endl;;
+	//temp.append('c');
+	//char ch = 'w';
+	temp2 = temp + 'w';
+	cout << temp2 << endl;
+	/*	if(temp > temp1) cout << "大于\n";
 	else cout << "不大于\n";*/
 	//temp.swap(temp1);
 	//cout << "temp = " << temp << endl << "temp1 = "<< temp1 << endl;
-
+	
 
 	/*cout << temp << " "  << temp.length()<< endl;
 	cout << temp.size() << endl;

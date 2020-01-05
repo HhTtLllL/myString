@@ -9,6 +9,7 @@ class myString
 	public :
 		myString()	{ my_str = new char('\0'); }
 		myString(const char *str);
+		myString(char* str);
 		myString(myString &temp)
 		{
 			int len1 = 0;
@@ -71,6 +72,9 @@ class myString
 		bool operator!= (myString& s1);
 		bool operator< (myString& s1);
 		bool operator> (myString& s1);
+		myString operator+ (char& ch);
+		myString operator+ (const char& ch);
+		myString operator+ (myString& s1);
 		char& operator[] (int index) const ;
 		myString& operator= (const myString& str);
 
