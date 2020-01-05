@@ -11,14 +11,21 @@ class myString
 		myString(const char *str);
 		myString(myString &temp)
 		{
-			my_str = temp.str();
+			int len1 = 0;
+			if(temp.str() != NULL) len1 = temp.length();
+			my_str = new char[len1 + 1];
+			for(int i = 0;i < len1;i++)
+			{
+				my_str[i] = temp[i];
+			}
+			//my_str = temp.str();
 		}
 		myString(size_t len,char ch)
 		{
 			my_str = new char[len];
 			for(int i = 0;i < len;i++) my_str[i] = ch;
 		}
-		char * str() const
+		char* str() const
 		{
 			return my_str;
 		}
@@ -40,7 +47,17 @@ class myString
 		}
 		char& operator[] (int index) const ;
 		myString& operator= (const myString& str);
-		int swap(myString& s1,myString& s2);
+		void swap(myString& s2)
+		{
+			
+			myString temp = s2; //此处调用的不是赋值运算符,而是myString(&myString) 构造函数
+			s2 = *this;
+			*this = temp;
+			/*myString temp(s2);
+			s2 = *this;
+			*this = temp;*/
+			return ;
+		}
 
 
 

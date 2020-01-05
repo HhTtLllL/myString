@@ -19,11 +19,11 @@ void test(myString &str)
 }
 int main()
 {
-	myString temp;
-	cin >> temp;
-	char ch = temp[2];
-	ch = 'r';
-	cout << temp;
+	myString temp,temp1;
+	cin >> temp >> temp1;
+	cout << temp << endl << temp1 << endl;
+	temp.swap(temp1);
+	cout << "temp = " << temp << endl << "temp1 = "<< temp1 << endl;
 
 
 	/*cout << temp << " "  << temp.length()<< endl;

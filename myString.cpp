@@ -34,16 +34,12 @@ myString& myString::operator=(const myString& str)
 	}
 
 	int len = str.length();
-	my_str = new char[len];
+	my_str = new char[len + 1];
 	for(int i = 0;i < len;i++)
 	{
 		my_str[i] = str[i];
 	}
 	return *this;
-}
-int myString::swap(myString& s1,myString& s2)
-{
-
 }
 char& myString::operator[](int index) const 
 {
