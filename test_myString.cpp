@@ -13,17 +13,21 @@
 #include <string>
 
 using namespace std;
+
 void test(myString &str)
 {
 	
 }
 int main()
 {
+	
 	myString temp,temp1;
 	cin >> temp >> temp1;
 	cout << temp << endl << temp1 << endl;
-	temp.swap(temp1);
-	cout << "temp = " << temp << endl << "temp1 = "<< temp1 << endl;
+	if(temp > temp1) cout << "大于\n";
+	else cout << "不大于\n";
+	//temp.swap(temp1);
+	//cout << "temp = " << temp << endl << "temp1 = "<< temp1 << endl;
 
 
 	/*cout << temp << " "  << temp.length()<< endl;

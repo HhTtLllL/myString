@@ -45,6 +45,50 @@ char& myString::operator[](int index) const
 {
 	return my_str[index];
 }
+bool myString::operator==(myString& s1)
+{
+	if((*this).length() != s1.length()) return false;
+	else
+	{
+		for(int i = 0;i < s1.length();i++)	if(*(my_str + i) != s1[i]) return false;
+	}
+	
+	return true;
+}
+bool myString::operator!= (myString& s1)
+{
+	if((*this).length() != s1.length()) return true;
+	else
+	{
+		for(int i = 0;i < s1.length();i++) if(*(my_str + i) != s1[i]) return true;
+	}
+
+	return false;
+}
+bool myString::operator< (myString& s1)
+{
+	int len1 = 0;
+	( ((*this).length()) < s1.length() ) ? len1 = ((*this).length()) : len1 = s1.length();
+
+	for(int i = 0;i < len1;i++)
+	{
+		if(*(my_str + i) != s1[i])
+		{
+			if(*(my_str + i) > s1[i]) return false;
+			else return true;
+		}
+	}
+	//已有的字符串完全相等
+	if((*this).length() == s1.length()) return false;
+	else if((*this).length() < s1.length()) return true;
+	else return false;
+
+	return false;
+}
+bool myString::operator> (myString& s1)
+{
+	return (s1 < (*this));
+}
 ostream& operator<< (ostream& os,myString &str)
 {
 	os << str.str();

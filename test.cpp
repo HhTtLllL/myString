@@ -14,12 +14,15 @@ using namespace std;
 
 int main()
 {
-	string temp;
-	cin >> temp;
-	cout << temp << endl;
-	cout << " temp size = " << temp.size() << endl;
+	string temp,temp1;
+	cin >> temp >> temp1;
+	cout << temp <<  endl;
+	cout << temp1 <<  endl;
+/*	cout << " temp size = " << temp.size() << endl;
 	cout << " temp length = " << temp.length() << endl;
-
+*/
+	if(temp < temp1) cout << "小于" << endl;
+	else cout << "不小于" << endl;
 
 	return 0;
 }

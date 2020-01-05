@@ -25,6 +25,7 @@ class myString
 			my_str = new char[len];
 			for(int i = 0;i < len;i++) my_str[i] = ch;
 		}
+
 		char* str() const
 		{
 			return my_str;
@@ -45,8 +46,6 @@ class myString
 			//len = length;
 			return size;
 		}
-		char& operator[] (int index) const ;
-		myString& operator= (const myString& str);
 		void swap(myString& s2)
 		{
 			
@@ -58,6 +57,12 @@ class myString
 			*this = temp;*/
 			return ;
 		}
+		bool operator== (myString& s1);
+		bool operator!= (myString& s1);
+		bool operator< (myString& s1);
+		bool operator> (myString& s1);
+		char& operator[] (int index) const ;
+		myString& operator= (const myString& str);
 
 
 
