@@ -26,8 +26,9 @@ int main()
 	//cout << temp + temp1 << endl;;
 	//temp.append('c');
 	//char ch = 'w';
-	temp2 = temp + 'w';
-	cout << temp2 << endl;
+	temp1 += temp;
+	//temp2 = temp + 'w';
+	cout << temp1 << endl;
 	/*	if(temp > temp1) cout << "大于\n";
 	else cout << "不大于\n";*/
 	//temp.swap(temp1);

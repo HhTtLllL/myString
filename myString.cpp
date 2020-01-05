@@ -168,6 +168,12 @@ void myString::push_back(char ch)
 	
 	return ;
 }
+void myString::operator+= (myString& s1)
+{
+	myString temp;
+	temp = (*this) + s1;
+	(*this) = temp;
+}
 ostream& operator<< (ostream& os,myString &str)
 {
 	os << str.str();
