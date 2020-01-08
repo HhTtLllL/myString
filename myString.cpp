@@ -174,6 +174,18 @@ void myString::operator+= (myString& s1)
 	temp = (*this) + s1;
 	(*this) = temp;
 }
+void myString::operator+= (char& ch)
+{
+	myString temp;
+	temp = (*this) + ch;
+	(*this) = temp;
+}
+void myString::operator+= (const char& ch)
+{
+	myString temp;
+	temp = (*this) + ch;
+	(*this) = temp;
+}
 ostream& operator<< (ostream& os,myString &str)
 {
 	os << str.str();

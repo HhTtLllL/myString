@@ -76,6 +76,8 @@ class myString
 		myString operator+ (const char& ch);
 		myString operator+ (myString& s1);
 		void operator+= (myString& s1);
+		void operator+= (char &ch);
+		void operator+= (const char& ch);
 		char& operator[] (int index) const ;
 		myString& operator= (const myString& str);
 
