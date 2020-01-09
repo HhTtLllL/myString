@@ -23,13 +23,19 @@ int main()
 	//cout << "size = " << temp.length();
 	cin >> temp >> temp1;
 	cout << temp << endl << temp1 << endl;
+	
+	//temp.clear();
+	//temp2.clear();
+	int i = 1;
+	temp.erase(1);
+	cout << "temp = " << temp << endl << temp1 << endl;
 	//cout << temp + temp1 << endl;;
 	//temp.append('c');
 	//char ch = 'w';
 	//char ch = 'w';
-	temp1 += 'a';
+	//temp1 += 'a';
 	//temp2 = temp + 'w';
-	cout << temp1 << endl;
+	//cout << temp1 << endl;
 	/*	if(temp > temp1) cout << "大于\n";
 	else cout << "不大于\n";*/
 	//temp.swap(temp1);

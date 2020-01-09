@@ -68,6 +68,9 @@ class myString
 		{
 			push_back(ch);
 		}
+		void clear();
+		void erase(const int& i);
+		void erase(int& i);
 		bool operator== (myString& s1);
 		bool operator!= (myString& s1);
 		bool operator< (myString& s1);

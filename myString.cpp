@@ -38,6 +38,57 @@ myString::myString(char* str)
 	}
 	my_str[len] = '\0';
 }
+
+void myString::clear()
+{
+	if((*this).empty()) return;
+	else
+	{
+		delete[] my_str;
+		my_str = new char('\0');
+	}
+
+}
+void myString::erase(const int& i)
+{
+        int len1 = (*this).length();
+        char* temp = new char[len1];
+        int num = 0;
+        for(int j = 0;j < len1;j++)
+        {
+                if(i == j) continue;
+                else 
+                {
+                        temp[num++] = (*this)[j];
+                }
+        }
+        temp[num] = '\0';
+        delete[] my_str;
+        my_str = temp;
+    
+        return ;
+
+}
+
+void myString::erase(int& i)
+{
+	int len1 = (*this).length();
+	char* temp = new char[len1];
+	int num = 0;
+	for(int j = 0;j < len1;j++)
+	{
+		if(i == j) continue;
+		else 
+		{
+			temp[num++] = (*this)[j];
+		}
+	}
+	temp[num] = '\0';
+	delete[] my_str;
+	my_str = temp;
+	
+	return ;
+}
 			      //加 const 会报错
 myString& myString::operator=(const myString& str)
 {
