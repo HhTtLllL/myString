@@ -89,7 +89,108 @@ void myString::erase(int& i)
 	
 	return ;
 }
-			      //加 const 会报错
+
+int myString::findbystr(char* s)
+{
+	//先计算s的next数组
+	int n = strlen(s);
+	int next[n];
+	getnext(s,next,n);
+	//用kmp
+	
+	return kmp(s,next);
+}
+int myString::findbystr(const char* s)
+{
+	//先计算s的next数组
+	int n = strlen(s);
+	int next[n];
+	getnext(s,next,n);
+	//用kmp
+	
+	return kmp(s,next);
+}
+void myString::getnext(const char* s,int* next,int n)
+{
+	int i,j;
+	j = next[0] = -1;
+	i = 0;
+	while(i < n)
+	{
+		while(-1 != j && s[i] != s[j]) j = next[j];
+		next[++i] = ++j;
+	}
+}
+void myString::getnext(char* s,int* next,int n)
+{
+	int i,j;
+	j = next[0] = -1;
+	i = 0;
+	while(i < n)
+	{
+		while(-1 != j && s[i] != s[j]) j = next[j];
+		next[++i] = ++j;
+	}
+}
+int myString::kmp(const char* s,int* next)
+{
+	int i = 0;
+	int j = 0;
+	int num = 0;
+	int len1 = strlen(s);
+	int len2 = (*this).length();
+
+	while(i < len2)
+	{
+		if(j == -1 || (*this)[i] == s[j])
+		{
+			i++;
+			j++;
+		}
+		else j = next[j];
+
+		if(j == len1) //如果找到一个串
+		{
+			//num++;
+			//j = next[j];
+			//cout << "i = " << i << endl;
+			//cout << "j = " << j << endl;
+			return i-1;
+		}
+	}
+
+	return -1;
+}
+int myString::kmp(char* s,int* next)
+{
+	int i = 0;
+	int j = 0;
+	int num = 0;
+	int len1 = strlen(s);
+	int len2 = (*this).length();
+
+	while(i < len2)
+	{
+		if(j == -1 || (*this)[i] == s[j])
+		{
+			i++;
+			j++;
+		}
+		else j = next[j];
+
+		if(j == len1) //如果找到一个串
+		{
+			//num++;
+			//j = next[j];
+			//cout << "i = " << i << endl;
+			//cout << "j = " << j << endl;
+			return i-1;
+		}
+	}
+
+	return -1;
+}
+                              //加 const 会报错
 myString& myString::operator=(const myString& str)
 {
 	//如果原来有值就删除

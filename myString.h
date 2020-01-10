@@ -69,6 +69,12 @@ class myString
 			push_back(ch);
 		}
 		void clear();
+		int findbystr(char* s);
+		int findbystr(const char* s);
+		void getnext(char* s,int* next,int n);
+		void getnext(const char* s,int* next,int n);
+		int kmp(char* s,int* next);
+		int kmp(const char* s,int* next);
 		void erase(const int& i);
 		void erase(int& i);
 		bool operator== (myString& s1);

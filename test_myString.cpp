@@ -23,12 +23,17 @@ int main()
 	//cout << "size = " << temp.length();
 	cin >> temp >> temp1;
 	cout << temp << endl << temp1 << endl;
-	
+	//char* s = "a";
+	int i = temp.findbystr("a");
+
+	cout << "i = " << i << endl;
+
+
 	//temp.clear();
 	//temp2.clear();
-	int i = 1;
+	/*int i = 1;
 	temp.erase(1);
-	cout << "temp = " << temp << endl << temp1 << endl;
+	cout << "temp = " << temp << endl << temp1 << endl;*/
 	//cout << temp + temp1 << endl;;
 	//temp.append('c');
 	//char ch = 'w';
