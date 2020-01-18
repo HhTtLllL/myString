@@ -68,7 +68,16 @@ class myString
 		{
 			push_back(ch);
 		}
+		//将字符串中的 ch1 替换 ch
+		myString& replace(const char& ch,const char& ch1);
+		myString& replace(char& ch,char& ch1);
+		//从下标i 开始，将字符替换成ch
+		myString& replace(const int& i,const char& ch);
+		myString& replace(int& i,char& ch);
 		void clear();
+		//如果参数为 int,char ,首先匹配int,char,类型函数,如果没有此重载类型的函数，则匹配const int,const char 类型函数
+		void insert(const int i,const char ch);
+		//void insert(int& i,char ch);
 		int findbystr(char* s);
 		int findbystr(const char* s);
 		void getnext(char* s,int* next,int n);
@@ -77,6 +86,9 @@ class myString
 		int kmp(const char* s,int* next);
 		void erase(const int& i);
 		void erase(int& i);
+		int compare(myString& s1);
+		int compare(const char* s);
+		int compare(char* s);
 		bool operator== (myString& s1);
 		bool operator!= (myString& s1);
 		bool operator< (myString& s1);
@@ -105,7 +117,6 @@ class myString
 		int len;
 
 };
-
 
 
 

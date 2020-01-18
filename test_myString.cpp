@@ -23,10 +23,23 @@ int main()
 	//cout << "size = " << temp.length();
 	cin >> temp >> temp1;
 	cout << temp << endl << temp1 << endl;
+	int i = 1;
+	char ch = 's';
+	temp.insert(i,ch);
+	cout << temp << endl;
+	
+	//char s[10] = "1111";
+	//int i = temp.compare(s);
+	//cout << i << endl;
 	//char* s = "a";
-	int i = temp.findbystr("a");
+	//int i = temp.findbystr("a");
 
-	cout << "i = " << i << endl;
+	//temp.replace('1','2');
+	//char ch = '1';
+	//char ch1 = '2';
+	//temp.replace(3,'2');
+	//cout << temp << endl;
+	//cout << "i = " << i << endl;
 
 
 	//temp.clear();

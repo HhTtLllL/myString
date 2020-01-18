@@ -49,6 +49,57 @@ void myString::clear()
 	}
 
 }
+//将字符串中的 ch1 替换 ch
+myString& myString::replace(const char& ch,const char& ch1)
+{
+	int len1 = (*this).length();
+	for(int i = 0;i < len1;i++)
+	{
+		if((*this)[i] == ch)
+		{
+			(*this)[i] = ch1;
+		}
+	}
+
+	return (*this);
+}
+
+myString& myString::replace(char& ch,char& ch1)
+{
+	int len1 = (*this).length();
+	for(int i = 0;i < len1;i++)
+	{
+		if((*this)[i] == ch)
+		{
+			(*this)[i] = ch1;
+		}
+	}
+
+	return (*this);
+}
+
+myString& myString::replace(const int& i,const char& ch)
+{
+	int len1 = (*this).length();
+	for(int j = i;j < len1;j++)
+	{
+		(*this)[j] = ch;
+	}
+
+	return (*this);
+}
+
+myString& myString::replace(int& i,char& ch)
+{
+	int len1 = (*this).length();
+	for(int j = i;j < len1;j++)
+	{
+		(*this)[j] = ch;
+	}
+
+	return (*this);
+}
+
 void myString::erase(const int& i)
 {
         int len1 = (*this).length();
@@ -190,6 +241,162 @@ int myString::kmp(char* s,int* next)
 
 	return -1;
 }
+//返回第一个差值
+int myString::compare(myString& s2)
+{
+	int len1 = (*this).length();
+	int len2 = s2.length();
+	
+	if(len1 != len2)
+	{
+		int min1 = min(len1,len2);
+		for(int i = 0;i < min1;i++)
+		{
+			if((*this)[i] != s2[i])
+			{
+				return ((*this)[i] - s2[i]);
+			}
+		}
+
+		if(len1 > len2)
+		{
+			return (*this)[min1];
+		}
+		else return s2[min1];
+	}
+	else
+	{
+		for(int i = 0;i < len1;i++)
+		{
+			if((*this)[i] != s2[i])
+			{
+				return ((*this)[i] - s2[i]);
+			}
+		}
+
+		return 0;
+
+	}
+	
+}
+int myString::compare(const char* s)
+{
+	int len1 = (*this).length();
+	int len2 = strlen(s);
+	
+	if(len1 != len2)
+	{
+		int min1 = min(len1,len2);
+		for(int i = 0;i < min1;i++)
+		{
+			if((*this)[i] != s[i])
+			{
+				return ((*this)[i] - s[i]);
+			}
+		}
+
+		if(len1 > len2)
+		{
+			return (*this)[min1];
+		}
+		else return s[min1];
+	}
+	else
+	{
+		for(int i = 0;i < len1;i++)
+		{
+			if((*this)[i] != s[i])
+			{
+				return ((*this)[i] - s[i]);
+			}
+		}
+
+		return 0;
+
+	}
+
+}
+int myString::compare(char* s)
+{
+	int len1 = (*this).length();
+	int len2 = strlen(s);
+	
+	if(len1 != len2)
+	{
+		int min1 = min(len1,len2);
+		for(int i = 0;i < min1;i++)
+		{
+			if((*this)[i] != s[i])
+			{
+				return ((*this)[i] - s[i]);
+			}
+		}
+
+		if(len1 > len2)
+		{
+			return (*this)[min1];
+		}
+		else return s[min1];
+	}
+	else
+	{
+		for(int i = 0;i < len1;i++)
+		{
+			if((*this)[i] != s[i])
+			{
+				return ((*this)[i] - s[i]);
+			}
+		}
+
+		return 0;
+
+	}
+
+}
+
+void myString::insert(const int i,const char ch)
+{
+	int len1 = (*this).length();
+
+	char* temp = new char[len1 + 1]; //
+	for(int j = 0;j < i;j++)
+	{
+		temp[j] = (*this)[j];
+	}
+	temp[i] = ch;
+	for(int j = i+1;j < len1+1;j++)
+	{
+		temp[j] = (*this)[j-1];
+	}
+
+	delete[] my_str;
+	my_str = temp;
+	cout << "222" << endl;
+
+	return ;
+}
+/*
+void myString::insert(int& i,char ch)
+{
+	cout << "111" << endl;
+	int len1 = (*this).length();
+
+	char* temp = new char[len1 + 1]; //
+	for(int j = 0;j < i;j++)
+	{
+		temp[j] = (*this)[j];
+	}
+	temp[i] = ch;
+	for(int j = i+1;j < len1+1;j++)
+	{
+		temp[j] = (*this)[j-1];
+	}
+
+	delete[] my_str;
+	my_str = temp;
+
+	return ;
+}*/
                               //加 const 会报错
 myString& myString::operator=(const myString& str)
 {
