@@ -29,10 +29,13 @@ int main()
 	//char temp2[10] = "ssss";
 	//temp.insert(1,temp2);
 	
-	//myString temp2;
+	myString temp2 = temp.substr(1,3);
 	//temp2 = temp.substr(1,3);
-	temp.insert(1,'2',3);
-	cout << temp << endl;
+	//temp.insert(1,'2',3);
+	char s[10];
+
+	temp.copy(s,2,0);
+	cout << s << endl;
 	
 	//char s[10] = "1111";
 	//int i = temp.compare(s);

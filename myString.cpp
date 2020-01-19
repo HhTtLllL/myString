@@ -431,7 +431,7 @@ myString myString::substr(int i,int j)
 	int k = 0;
 	for(i;i < j;i++)
 	{
-		//不可以执行
+		//不可以执行 ???
 		/*cout << (*this)[i] << endl;
 		temp.push_back((*this)[i]);
 		temp.push_back('s');
@@ -442,6 +442,22 @@ myString myString::substr(int i,int j)
 	delete[] temp.my_str;
 	temp.my_str = s;
 	return temp;
+}
+
+void myString::copy(char* s,int n,const int pos)
+{
+	//s = new char[n+1];
+
+	int i = pos;
+	int k = 0;
+	while(n--)
+	{
+		s[k++] = (*this)[i++];
+		cout << k << endl;
+	}
+	s[k] = '\0';
+
+	return ;
 }
                               //加 const 会报错
 myString& myString::operator=(const myString& str)

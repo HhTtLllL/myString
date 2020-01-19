@@ -21,6 +21,17 @@ class myString
 			}
 			//my_str = temp.str();
 		}
+		myString(const myString& temp)
+		{
+			int len1 = 0;
+			if(temp.str() != NULL) len1 = temp.length();
+			my_str = new char[len1 + 1];
+			for(int i = 0;i < len1;i++)
+			{
+				my_str[i] = temp[i];
+			}
+
+		}
 		myString(size_t len,char ch)
 		{
 			my_str = new char[len + 1];
@@ -80,6 +91,8 @@ class myString
 		void insert(const int i,const char ch,const int n);
 		void insert(const int i,const char* s);
 		myString substr(int i,int j);
+		//将从 pos 开始处的 n 个字符赋值给s
+		void copy(char* s,int n,const int pos);
 		int findbystr(char* s);
 		int findbystr(const char* s);
 		void getnext(char* s,int* next,int n);
