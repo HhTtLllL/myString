@@ -17,15 +17,21 @@ using namespace std;
 int main()
 {
 
-	myString temp,temp1,temp2;
+	myString temp,temp1;
 	/*if(temp.empty()) cout << "空" << endl;
 	else cout << "非空" << endl;*/
 	//cout << "size = " << temp.length();
 	cin >> temp >> temp1;
+	//temp.push_back('s');
 	cout << temp << endl << temp1 << endl;
-	int i = 1;
-	char ch = 's';
-	temp.insert(i,ch);
+	//int i = 1;
+	//char ch = 's';
+	//char temp2[10] = "ssss";
+	//temp.insert(1,temp2);
+	
+	//myString temp2;
+	//temp2 = temp.substr(1,3);
+	temp.insert(1,'2',3);
 	cout << temp << endl;
 	
 	//char s[10] = "1111";

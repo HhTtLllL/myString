@@ -371,32 +371,78 @@ void myString::insert(const int i,const char ch)
 
 	delete[] my_str;
 	my_str = temp;
-	cout << "222" << endl;
 
 	return ;
 }
-/*
-void myString::insert(int& i,char ch)
+//从第i个字符开始,加 n 个ch字符
+void myString::insert(const int i,const char ch,const int n)
 {
-	cout << "111" << endl;
 	int len1 = (*this).length();
 
-	char* temp = new char[len1 + 1]; //
+	char* temp = new char[len1 + 1 + n]; //
 	for(int j = 0;j < i;j++)
 	{
 		temp[j] = (*this)[j];
 	}
-	temp[i] = ch;
-	for(int j = i+1;j < len1+1;j++)
+	
+	for(int j = i;j < i + n;j++)
 	{
-		temp[j] = (*this)[j-1];
+		temp[j] = ch;
+	}
+
+	for(int j = i+n;j < len1 + 1 + n;j++)
+	{
+		temp[j] = (*this)[j-n];
 	}
 
 	delete[] my_str;
 	my_str = temp;
 
 	return ;
-}*/
+}
+
+void myString::insert(const int i,const char* s)
+{
+	int len1 = (*this).length();
+	int len2 =strlen(s);
+	char* temp = new char[len1 + len2 + 1];
+	for(int j = 0;j < i;j++)	temp[j] = (*this)[j];
+	int k  =0;
+	for(int j = i;j < i + len2;j++)
+	{
+		temp[j] = s[k++];
+	}
+	k = i;
+	for(int j = i + len2;j < len1 + len2;j++)
+	{
+		temp[j]	= (*this)[k++];
+	}
+
+	delete[] my_str;
+	my_str = temp;
+
+	return ;
+}
+
+myString myString::substr(int i,int j)
+{
+	myString temp;
+	char* s = new char[j-i];
+	int k = 0;
+	for(i;i < j;i++)
+	{
+		//不可以执行
+		/*cout << (*this)[i] << endl;
+		temp.push_back((*this)[i]);
+		temp.push_back('s');
+		cout << "temp = " << temp << endl;*/
+		s[k++] = (*this)[i];
+	}
+	
+	delete[] temp.my_str;
+	temp.my_str = s;
+	return temp;
+}
                               //加 const 会报错
 myString& myString::operator=(const myString& str)
 {
@@ -513,7 +559,7 @@ myString myString::operator+ (myString& s1)
 	return temp;
 }
 
-void myString::push_back(char ch)
+void myString::push_back(const char ch)
 {
 	int len1 = (*this).length();
 	char *temp = my_str;
@@ -524,7 +570,7 @@ void myString::push_back(char ch)
 	}
 	*(my_str + len1) = ch;
 	*(my_str + len1 + 1) = '\0';
-	
+	//cout << " 111 \n";
 	return ;
 }
 void myString::operator+= (myString& s1)

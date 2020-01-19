@@ -63,7 +63,7 @@ class myString
 			if(my_str == NULL) return true;
 			else return false;
 		}
-		void push_back(char ch);
+		void push_back(const char ch);
 		void append(char ch)
 		{
 			push_back(ch);
@@ -77,7 +77,9 @@ class myString
 		void clear();
 		//如果参数为 int,char ,首先匹配int,char,类型函数,如果没有此重载类型的函数，则匹配const int,const char 类型函数
 		void insert(const int i,const char ch);
-		//void insert(int& i,char ch);
+		void insert(const int i,const char ch,const int n);
+		void insert(const int i,const char* s);
+		myString substr(int i,int j);
 		int findbystr(char* s);
 		int findbystr(const char* s);
 		void getnext(char* s,int* next,int n);
